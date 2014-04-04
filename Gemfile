@@ -51,6 +51,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'pry-rails'
   gem 'ffaker'
+  gem 'guard-rspec'
 end
 
 # Use stripe to manage online payments
