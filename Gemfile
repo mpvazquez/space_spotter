@@ -41,5 +41,17 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+group :development, :test do
+  gem 'debugger'
+  gem 'jasmine'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'launchy'
+  gem 'shoulda-matchers'
+  gem 'pry-rails'
+  gem 'ffaker'
+end
+
+# Use stripe to manage online payments
+gem 'stripe'
