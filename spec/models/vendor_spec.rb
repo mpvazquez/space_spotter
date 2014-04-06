@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Customer do
+describe Vendor do
   before do
-   FactoryGirl.create(:customer)
+   FactoryGirl.create(:vendor)
   end
 
   it { should validate_presence_of :first_name}
@@ -14,4 +14,5 @@ describe Customer do
   it { should validate_presence_of :zip_code}
   it { should have_secure_password}
   it { should validate_presence_of :password_digest}
+  it { should validate_presence_of :phone_number}
 end

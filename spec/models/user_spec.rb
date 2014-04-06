@@ -14,6 +14,6 @@ describe User do
     it { should validate_uniqueness_of :username}
     it { should have_secure_password}
     it { should validate_presence_of :password_digest}
-    it { should validate_presence_of :phone_number}
+    it { should validate_presence_of :zip_code}
   end
 end

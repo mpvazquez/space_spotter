@@ -9,7 +9,11 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :phone_number
       t.text :photo_url
       t.text :bio_text
-      t.string :role
+      t.string :address
+      t.string :city
+      t.string :state
+      t.integer :zip_code
+      t.string :role, default: 'customer'
       t.timestamps
     end
   end

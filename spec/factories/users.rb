@@ -10,6 +10,10 @@ FactoryGirl.define do
     password_confirmation 'password'
     phone_number { Faker::PhoneNumber.short_phone_number }
     photo_url "http://placekitten.com/250/350"
+    address { Faker::Address.street_address(include_secondary = false)}
+    city { Faker::Address.city}
+    state { Faker::AddressUS.state}
+    zip_code { Faker::AddressUS.zip_code}
     bio_text { Faker::Lorem.paragraph(sentence_count = 3) }
     role "customer"
   end

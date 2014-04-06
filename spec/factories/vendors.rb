@@ -1,7 +1,7 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :customer, :class => 'Customer' do
+  factory :vendor, :class => 'Vendor' do
     first_name { Faker::Name.first_name } 
     last_name { Faker::Name.last_name }
     email { Faker::Internet.email}
@@ -13,6 +13,6 @@ FactoryGirl.define do
     bio_text { Faker::Lorem.paragraph(sentence_count = 3) }
     city { Faker::Address.city}
     zip_code { Faker::AddressUS.zip_code}
-    role "customer"
+    role "vendor"
   end
 end
