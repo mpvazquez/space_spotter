@@ -20,8 +20,12 @@ ActiveRecord::Schema.define(version: 20140404183226) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
+    t.string   "username"
     t.string   "password_digest"
     t.integer  "phone_number"
+    t.text     "photo_url"
+    t.text     "bio_text"
+    t.string   "role"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
