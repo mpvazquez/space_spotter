@@ -6,9 +6,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def show
-  end
-
   def create
     @user = User.new(user_params)
 
@@ -16,6 +13,18 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       render(:new)
+    end
+  end
+
+  def show
+  end
+
+  def update
+    @account_update = @user.update(user_params)
+    if @account_update
+      redirect_to user_path(@user)
+    else
+      render(:edit)
     end
   end
 
