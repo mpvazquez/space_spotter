@@ -20,5 +20,11 @@ describe "user can register for website" do
     fill_in "user_city", with: user.city
     fill_in "user_state", with: user.state
     fill_in "user_zip_code", with: user.zip_code
+
+    click_button "Register"
+
+    expect(page).to have_content("#{user.first_name}")
+
+    save_and_open_page
   end
 end

@@ -37,4 +37,6 @@
 
   <%= f.label :zip_code %>
   <%= f.text_field :zip_code %>
+
+  <%= f.submit @user.id.nil? ? "Register" : "Save Changes" %>
 <% end %>

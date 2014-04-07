@@ -6,6 +6,9 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def show
+  end
+
   def create
     @user = User.new(user_params)
 
@@ -32,7 +35,11 @@ class UsersController < ApplicationController
       :password_confirmation,
       :phone_number, 
       :photo_url,
+      :address,
+      :city,
+      :state,
       :bio_text,
+      :zip_code,
       :role
     )
   end
