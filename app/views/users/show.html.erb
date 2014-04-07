@@ -1,6 +1,11 @@
-Welcome, <%= @user.first_name %>
+<h2>Welcome, <%= @user.first_name %></h2>
 
 <%= link_to "Edit Account Information", edit_user_path %>
-<%= form_tag user_path, method: "delete" do %>
+
+<%= form_tag new_vendor_listing_path(@user), method: "GET" do %>
+  <%= submit_tag "Create New Listing" %>
+<% end %>
+
+<%= form_tag user_path, method: "DELETE" do %>
   <%= submit_tag "Delete Account" %>
 <% end %>

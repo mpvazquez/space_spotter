@@ -9,4 +9,10 @@ SpaceSpotter::Application.routes.draw do
 
   #user resources
   resources :users
+
+  resources :listings
+
+  resources :vendors do
+    resources :listings, controller: "vendors/listings"
+  end
 end
