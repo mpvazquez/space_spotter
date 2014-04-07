@@ -23,7 +23,7 @@
   <%= f.label :photo_url %>
   <%= f.text_field :photo_url %><br>
 
-  <%= f.label :bio_text %>
+  <%= f.label :bio_text, "About Me" %>
   <%= f.text_field :bio_text %><br>
 
   <%= f.label :address %>
@@ -37,6 +37,12 @@
 
   <%= f.label :zip_code %>
   <%= f.text_field :zip_code %><br>
+
+  <%= f.label :role, "I am a customer looking to find space"%>
+  <%= f.radio_button :role, "customer" %> <br>
+
+  <%= f.label :role, "I am a vendor looking to rent my space"%>
+  <%= f.radio_button :role, "vendor" %> <br>
 
   <%= f.submit @user.id.nil? ? "Register" : "Save Changes" %>
 <% end %>
