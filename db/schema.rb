@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140406224937) do
+ActiveRecord::Schema.define(version: 20140407005418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: true do |t|
+    t.integer  "customer_id"
+    t.integer  "timeslot_id"
+    t.text     "review_text"
+    t.integer  "review_score"
+    t.decimal  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "listings", force: true do |t|
     t.string   "title"
@@ -26,6 +36,15 @@ ActiveRecord::Schema.define(version: 20140406224937) do
     t.integer  "zip_code"
     t.decimal  "rate"
     t.integer  "vendor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spot_mails", force: true do |t|
+    t.integer  "customer_id"
+    t.integer  "booking_id"
+    t.string   "message_subject"
+    t.text     "message_text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
