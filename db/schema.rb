@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140406200846) do
+ActiveRecord::Schema.define(version: 20140406224937) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 20140406200846) do
     t.integer  "zip_code"
     t.decimal  "rate"
     t.integer  "vendor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "timeslots", force: true do |t|
+    t.date     "date"
+    t.time     "start_time"
+    t.time     "stop_time"
+    t.boolean  "booked",     default: false
+    t.integer  "listing_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

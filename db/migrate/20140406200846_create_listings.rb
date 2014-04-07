@@ -9,7 +9,7 @@ class CreateListings < ActiveRecord::Migration
       t.string :state
       t.integer :zip_code
       t.decimal :rate
-      t.integer  :vendor_id
+      t.references :vendor
       t.timestamps
     end
   end

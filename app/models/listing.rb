@@ -6,6 +6,8 @@ class Listing < ActiveRecord::Base
   validates :state, presence: true
   validates :zip_code, presence: true
   validates :rate, presence: true
+  validates_associated :vendor 
 
   belongs_to :vendor
+  has_many :timeslots
 end
