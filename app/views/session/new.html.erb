@@ -1,2 +1,20 @@
-<h1>Session#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<h1>Welcome</h1>
+<p>Please log into your account</p>
+
+<% unless @message.nil? %>
+  <div id="errors">
+    <h3>Errors!</h3>
+    <ul>
+      <li><em><%= @message %></em></li>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_tag "/session" do %>
+  <%= label_tag :email %>
+  <%= email_field_tag :email %>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
+  
+  <%= submit_tag "Log In" %>
+<% end %>

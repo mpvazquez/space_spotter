@@ -13,6 +13,7 @@ class SessionController < ApplicationController
       
       # save the user_id in the session hash
       session[:user_id] = user.id
+      @current_user = User.find_by(id: session[:user_id])
 
       # and redirect to that user's home page
       redirect_to( user_path(user) )
