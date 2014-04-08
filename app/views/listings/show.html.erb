@@ -4,9 +4,6 @@
   <img class="listing-photo" src="<%= @listing.listing_photo_url %>">
 
   <p><%= @listing.description %></p>
-  <%= form_tag edit_vendor_listing_path, method: "GET" do %>
-    <%= submit_tag "Update Listing" %>
-  <% end %>
 
 </div>
 
