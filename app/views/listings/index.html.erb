@@ -1,7 +1,7 @@
-<h1>SUP BITCHES</h1>
+<h1>Space Spotter Listings</h1>
 
 <ul>
   <% @listings.each do | listing | %>
-    <li><%= listing.title %></li>
+    <li><%= link_to listing.title, listing_path(listing) %></a></li>
   <% end %>
 </ul>

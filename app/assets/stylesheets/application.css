@@ -11,3 +11,20 @@
  *= require_self
  *= require_tree .
  */
+
+.listing-photo {
+  width: 300px;
+}
+
+.left-column {
+  display: inline-block;
+}
+
+.right-column {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.right-column h3 {
+  margin-top: 0;
+}

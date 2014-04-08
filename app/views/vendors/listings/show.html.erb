@@ -1,3 +1,19 @@
-<ul>
-    <li><%= @listing.title %></li>
-</ul>
+<h2><%= @listing.title %></h2>
+
+<div class="left-column">
+  <img class="listing-photo" src="<%= @listing.listing_photo_url %>">
+
+  <p><%= @listing.description %></p>
+
+</div>
+
+<div class="right-column">
+  <h3>Rate: $<%= @listing.rate %></h3>
+  
+  <ul>
+    <li>Location:</li>
+    <li><%= @listing.address %></li>
+    <li><%= @listing.city %></li>
+    <li><%= @listing.state %></li>
+  </ul>
+</div>
