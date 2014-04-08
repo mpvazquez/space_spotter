@@ -5,5 +5,6 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
+    @timeslots = Timeslot.where(listing_id: @listing.id)
   end
 end

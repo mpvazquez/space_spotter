@@ -9,11 +9,19 @@
 
 <div class="right-column">
   <h3>Rate: $<%= @listing.rate %></h3>
-  
+
+  <h3>Location</h3>
   <ul>
-    <li>Location:</li>
     <li><%= @listing.address %></li>
     <li><%= @listing.city %></li>
     <li><%= @listing.state %></li>
+  </ul>
+
+  <h3>Availability</h3>
+  <ul>
+    <% @timeslots.each do |timeslot| %>
+    <li><%= timeslot.date %></li>
+    <li>From: <%= timeslot.start_time %> To: <%= timeslot.stop_time %></li>
+    <% end %>
   </ul>
 </div>

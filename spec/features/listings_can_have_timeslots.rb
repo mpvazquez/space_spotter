@@ -10,7 +10,7 @@ describe 'vendors can set listing timeslots' do
 
     visit vendor_listings_path(vendor)
     
-    click_button "Update Listing"
+    click_link "Update Listing"
 
     expect(page).to have_content "Listing Availability"
 
@@ -19,13 +19,13 @@ describe 'vendors can set listing timeslots' do
     expect(page).to have_content "Start Time"
     expect(page).to have_content "Date"
 
-    fill_in :date, with: '03-15-2015'
-    fill_in :start_time, with: '11:00'
-    fill_in :stop_time, with: '13:00'
+    fill_in :timeslot_date, with: '2015-03-15'
+    fill_in :timeslot_start_time, with: '11:00'
+    fill_in :timeslot_stop_time, with: '13:00'
 
     click_button "Add Timeslot"
 
-    expect(page).to have_content '03-15-2015'
+    expect(page).to have_content '2015-03-15'
   end
 
   def login(vendor)

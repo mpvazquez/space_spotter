@@ -7,6 +7,7 @@ class Vendors::ListingsController < ApplicationController
   end
 
   def show
+    @timeslots = Timeslot.where(listing_id: @listing.id)
   end
 
   def new

@@ -2,6 +2,6 @@
 
 <ul>
   <% @listings.each do | listing | %>
-    <li><%= link_to listing.title, vendor_listing_path(@vendor, listing) %></a></li>
+    <li><%= link_to listing.title, vendor_listing_path(@vendor, listing) %></a> - <%= link_to "Update Listing", edit_vendor_listing_path(@vendor, listing) %></li>
   <% end %>
 </ul>

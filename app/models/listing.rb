@@ -10,4 +10,5 @@ class Listing < ActiveRecord::Base
 
   belongs_to :vendor
   has_many :timeslots
+  has_many :bookings, through: :timeslots
 end

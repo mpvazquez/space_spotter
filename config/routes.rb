@@ -13,6 +13,8 @@ SpaceSpotter::Application.routes.draw do
   resources :listings
 
   resources :vendors do
-    resources :listings, controller: "vendors/listings"
+    resources :listings, controller: "vendors/listings" do
+      resources :timeslots
+    end
   end
 end
