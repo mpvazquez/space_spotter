@@ -35,8 +35,8 @@ describe "users can browse listings" do
     expect(page).to have_content "Browse All Listings"
 
     click_link "Browse All Listings"
-    save_and_open_page
-    expect(page).to have_content listing_title
+    
+    expect(page).to have_content listing.title
   end
 
   def login(vendor)

@@ -1,0 +1,15 @@
+<h2>Welcome, <%= @vendor.first_name %></h2>
+
+<%= link_to "Edit Account Information", edit_vendor_path %>
+
+<%= form_tag new_vendor_listing_path(@vendor), method: "GET" do %>
+  <%= submit_tag "Create New Listing" %>
+<% end %>
+
+<%= form_tag vendor_listings_path(@vendor), method: "GET" do %>
+  <%= submit_tag "Manage My Listings" %>
+<% end %>
+
+<%= form_tag vendor_path, method: "DELETE" do %>
+  <%= submit_tag "Delete Account" %>
+<% end %>

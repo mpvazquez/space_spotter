@@ -1,5 +1,6 @@
 class Vendors::ListingsController < ApplicationController
   def index
+    @vendor = Vendor.find(session[:user_id])
     @listings = Vendor.find(session[:user_id]).listings
   end
 
