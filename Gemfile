@@ -52,6 +52,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'ffaker'
   gem 'guard-rspec'
+  gem "selenium-webdriver"
 end
 
 # Use stripe to manage online payments

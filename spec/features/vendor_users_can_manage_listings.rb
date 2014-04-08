@@ -35,9 +35,18 @@ describe "vendor users can manage (edit/update, delete) their listings" do
     fill_in :listing_rate, with: 459.33
 
     click_button "Save Changes"
-    save_and_open_page
+    
     click_button "Update Listing"
-    expect(find('#listing_rate').value).to have_content 459.00
+    expect(find('#listing_rate').value).to have_content 459.33
+    
+    visit vendor_listings_path(vendor)
+
+    click_link listing.title
+
+    click_button "Delete Listing"
+
+    expect(page).not_to have_content listing.title
+
     save_and_open_page
   end
 

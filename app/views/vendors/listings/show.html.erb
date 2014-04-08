@@ -8,6 +8,10 @@
     <%= submit_tag "Update Listing" %>
   <% end %>
 
+  <%= form_tag vendor_listing_path, method: "DELETE" do %>
+    <%= submit_tag "Delete Listing" %>
+  <% end %>
+
 </div>
 
 <div class="right-column">

@@ -1,6 +1,6 @@
 class Vendors::ListingsController < ApplicationController
   before_action :load_vendor, only: [:index, :show, :edit, :update, :destroy]
-  before_action :load_listing, only: [:show, :edit, :update]
+  before_action :load_listing, only: [:show, :edit, :update, :destroy]
 
   def index
     @listings = Vendor.find(session[:user_id]).listings
@@ -34,6 +34,11 @@ class Vendors::ListingsController < ApplicationController
     else
       render(:edit)
     end
+  end
+
+  def destroy
+    @listing.destroy
+    redirect_to vendor_listings_path
   end
 
   private
