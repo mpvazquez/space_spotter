@@ -16,7 +16,14 @@ class SessionController < ApplicationController
       @current_user = User.find_by(id: session[:user_id])
 
       # and redirect to that user's home page
-      redirect_to( user_path(user) )
+      if current_user.role == "vendor"
+        redirect_to vendor_path(@current_user)
+      elsif current_user.role == "admin"
+        redirect_to admin_path(@current_user)
+      else
+        redirect_to customer_path(@current_user)
+      end
+        # redirect_to( user_path(user) )
     else
 
       # the email/password is wrong!
