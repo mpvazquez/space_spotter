@@ -8,7 +8,8 @@ describe "vendor users can create listings" do
     visit root_path
     login(vendor)
 
-    click_link "#{vendor.first_name}'s Profile"
+    visit vendor_path(vendor)
+    
     expect(page).to have_content "Welcome, #{vendor.first_name}"
     expect(page).to have_content "Edit Account Information"
 

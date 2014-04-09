@@ -8,9 +8,13 @@ SpaceSpotter::Application.routes.draw do
   delete "/session", to: "session#destroy"
 
   #user resources
-  resources :users
+  resources :users do
+    resources :spot_mails
+  end
 
-  resources :listings
+  resources :listings do
+    resources :timeslots
+  end
 
   resources :vendors do
     resources :listings, controller: "vendors/listings" do

@@ -1,4 +1,4 @@
-<h2><%= @listing.title %></h2>
+<h2><%= @listing.title %> - <%= link_to "Book This Listing", listing_timeslots_path(@listing) %></h2>
 
 <div class="left-column">
   <img class="listing-photo" src="<%= @listing.listing_photo_url %>">
@@ -19,9 +19,18 @@
 
   <h3>Availability</h3>
   <ul>
-    <% @timeslots.each do |timeslot| %>
-    <li><%= timeslot.date %></li>
-    <li>From: <%= timeslot.start_time %> To: <%= timeslot.stop_time %></li>
+
+    <% if @timeslots.exists? == false %>
+
+    <li>No Availabilities At This Time</li>
+
+    <% elsif %>
+
+      <% @timeslots.each do |timeslot| %>
+      <li><%= timeslot.date %></li>
+      <li>From: <%= timeslot.start_time %> To: <%= timeslot.stop_time %></li>
+
+      <% end %>
     <% end %>
   </ul>
 </div>

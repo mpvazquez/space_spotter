@@ -1,0 +1,13 @@
+<h2>Confirm Booking Request for <%= @listing.title %></h2>
+
+<p>Book this space on <%= @timeslot.date %> from <%= @timeslot.start_time %> to <%= @timeslot.stop_time %>?</p>
+
+<%= form_for [@listing, @timeslot], method: "PUT" do %>
+   <%= label_tag "Yes" %>
+   <%= radio_button_tag :booked, 'true' %> <br>
+
+   <%= label_tag "No" %>
+   <%= radio_button_tag :booked, 'false' %><br>
+
+   <%= submit_tag "Submit" %>
+<% end %>

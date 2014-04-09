@@ -18,11 +18,13 @@
 
 .left-column {
   display: inline-block;
+  width: 60%;
 }
 
 .right-column {
   display: inline-block;
   vertical-align: top;
+  width: 30%;
 }
 
 .right-column h3 {

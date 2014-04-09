@@ -1,0 +1,19 @@
+<h2>Availability for <%= @listing.title %></h2>
+
+<p>Please Select Your Desired Timeslot Below:</p>
+<ul>
+
+  <% if @timeslots.exists? == false %>
+
+    <li>No Availabilities At This Time</li>
+
+  <% elsif %>
+
+    <% @timeslots.each do |timeslot| %>
+
+    <li><%= link_to timeslot.date, listing_timeslot_path(@listing, timeslot) %></li>
+    <li>From: <%= timeslot.start_time %> To: <%= timeslot.stop_time %></li>
+
+    <% end %>
+  <% end %>
+  </ul>
