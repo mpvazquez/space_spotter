@@ -15,7 +15,7 @@ class TimeslotsController < ApplicationController
     @timeslot.update(listing_id: @listing.id)
 
     if @timeslot.save
-      redirect_to vendor_listing_path(@vendor, @listing)
+      redirect_to vendor_listings_path(@listing)
     else
       render(:new)
     end

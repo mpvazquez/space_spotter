@@ -21,4 +21,8 @@ SpaceSpotter::Application.routes.draw do
       resources :timeslots
     end
   end
+
+  resources :customers do
+    resources :bookings
+  end
 end

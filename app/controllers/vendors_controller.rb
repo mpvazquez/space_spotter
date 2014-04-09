@@ -1,6 +1,6 @@
 class VendorsController < ApplicationController
   before_action :load_vendor, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate, :authorize, only: [:edit, :update]
+  before_action :authenticate, :authorize, only: [:edit, :update, :destroy]
 
   def new
     @vendor = Vendor.new
@@ -66,7 +66,7 @@ class VendorsController < ApplicationController
   end
 
   def authorize
-    unless current_vendor == @vendor
+    unless current_user == @vendor
       redirect_to login_path
     end
   end
