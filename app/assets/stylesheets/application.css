@@ -35,7 +35,8 @@
 }
 
 body {
-  background: gray;
+  background-image: url("/assets/green_cup.png");
+  background-repeat: repeat;
 }
 
 h1 {
