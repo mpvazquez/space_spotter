@@ -14,3 +14,15 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+
+  function listingUpdate() {
+    var li = $('.listing-timeslot')
+
+    if (li.booked === true) {
+      li.addID('.booked');
+    }
+  }
+
+});

@@ -34,8 +34,12 @@
     <% elsif %>
 
       <% @timeslots.each do |timeslot| %>
-      <li><%= timeslot.date %></li>
-      <li>From: <%= timeslot.start_time %> To: <%= timeslot.stop_time %></li>
+        <% if timeslot.booked == true %>
+          <li class="listing-timeslot booked"><%= timeslot.date %></li>
+        <% else %>
+        <li class="listing-timeslot"><%= timeslot.date %></li>
+          <li class="listing-timeslot">From: <%= timeslot.start_time.hour %>:00 To: <%= timeslot.stop_time.hour %>:00</li>
+        <% end %>
 
       <% end %>
     <% end %>

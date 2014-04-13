@@ -22,12 +22,14 @@
 .left-column {
   display: inline-block;
   width: 60%;
+  margin-left: 25px;
 }
 
 .right-column {
   display: inline-block;
   vertical-align: top;
   width: 30%;
+  margin-right: 25px;
 }
 
 .right-column h3 {
@@ -55,12 +57,24 @@ h2 {
   font-size: 2em;
 }
 
+h3 {
+  font-family: Lato;
+}
+
 p {
   text-align: justify;
   font-size: 1em;
   font-family: Open Sans;
 }
 
+a {
+  color: brown;
+}
+
 .login {
   float: left;
+}
+
+.booked {
+  text-decoration: line-through;
 }
