@@ -37,8 +37,7 @@
         <% if timeslot.booked == true %>
           <li class="listing-timeslot booked"><%= timeslot.date %></li>
         <% else %>
-        <li class="listing-timeslot"><%= timeslot.date %></li>
-          <li class="listing-timeslot">From: <%= timeslot.start_time.hour %>:00 To: <%= timeslot.stop_time.hour %>:00</li>
+        <li class="listing-timeslot"><%= timeslot.date %> From: <%= timeslot.start_time.strftime(format=' %l:%M %p') %> To: <%= timeslot.stop_time.strftime(format='%l:%M %p') %></li>
         <% end %>
 
       <% end %>

@@ -1,6 +1,6 @@
 <h2>Confirm Booking Request for <%= @listing.title %></h2>
 
-<p>Book this space on <%= @timeslot.date %> from <%= @timeslot.start_time %> to <%= @timeslot.stop_time %>?</p>
+<p>Book this space on <%= @timeslot.date %> From: <%= @timeslot.start_time.strftime(format=' %l:%M %p') %> To: <%= @timeslot.stop_time.strftime(format=' %l:%M %p') %>?</p>
 
 <%= form_for [@listing, @timeslot], method: "PUT" do %>
    <%= label_tag "Yes" %>
