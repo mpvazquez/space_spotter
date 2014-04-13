@@ -9,6 +9,6 @@ class Listing < ActiveRecord::Base
   validates_associated :vendor 
 
   belongs_to :vendor
-  has_many :timeslots
+  has_many :timeslots, dependent: :destroy
   has_many :bookings, through: :timeslots
 end
