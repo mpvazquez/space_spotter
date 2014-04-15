@@ -14,8 +14,10 @@
     <%= f.submit @timeslot.id.nil? ? "Add Timeslot" : "Save Changes" %>
   <% end %>
 
-  <%= form_tag vendor_listing_timeslot_path, method: "DELETE" do %>
-    <%= submit_tag "Delete Timeslot" %>
+  <% if @timeslot.id.nil? == false %>
+    <%= form_tag vendor_listing_timeslot_path, method: "DELETE" do %>
+      <%= submit_tag "Delete Timeslot" %>
+    <% end %>
   <% end %>
 
 </div>
