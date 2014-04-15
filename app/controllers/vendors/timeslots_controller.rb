@@ -13,7 +13,7 @@ class Vendors::TimeslotsController < ApplicationController
   def create
     @timeslot = Timeslot.new(timeslot_params)
     @timeslot.update(listing_id: @listing.id)
-
+    binding.pry
     if @timeslot.save
       redirect_to edit_vendor_listing_path(@vendor, @listing)
     else

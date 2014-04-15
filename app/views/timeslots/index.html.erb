@@ -11,7 +11,9 @@
 
     <% @timeslots.each do |timeslot| %>
 
-    <li><%= link_to timeslot.date, listing_timeslot_path(@listing, timeslot) %> From: <%= timeslot.start_time.strftime(format=' %l:%M %p') %> To: <%= timeslot.stop_time.strftime(format=' %l:%M %p') %></li>
+    <% if timeslot.booked == false %>
+      <li><%= link_to timeslot.date, listing_timeslot_path(@listing, timeslot) %> From: <%= timeslot.start_time.strftime(format=' %l:%M %p') %> To: <%= timeslot.stop_time.strftime(format=' %l:%M %p') %></li>
+    <% end %>
 
     <% end %>
   <% end %>
