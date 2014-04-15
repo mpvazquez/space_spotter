@@ -5,4 +5,7 @@ class Timeslot < ActiveRecord::Base
   validates_associated :listing
   
   belongs_to :listing
+
+  def format_time
+  end
 end

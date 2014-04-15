@@ -36,5 +36,10 @@
   <% else %>
     <h3>Listing Availability</h3>
     <%= link_to "Add New Timeslot", new_vendor_listing_timeslot_path(@vendor, @listing) %>
+    <ul>
+      <% @timeslots.each do |timeslot| %>
+      <li class="listing-timeslot"><%= timeslot.date %> From: <%= timeslot.start_time.strftime(format=' %l:%M %p') %> To: <%= timeslot.stop_time.strftime(format='%l:%M %p') %> - <%= link_to "Update", edit_vendor_listing_timeslot_path(@vendor, @listing, timeslot) %> </li>
+      <% end %>
+    </ul>
   <% end %>
 </div>

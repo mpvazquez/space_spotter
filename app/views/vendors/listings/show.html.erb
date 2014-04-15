@@ -34,11 +34,9 @@
     <% elsif %>
 
       <% @timeslots.each do |timeslot| %>
-        <% if timeslot.booked == true %>
-          <li class="listing-timeslot booked"><%= timeslot.date %></li>
-        <% else %>
+       
         <li class="listing-timeslot"><%= timeslot.date %> From: <%= timeslot.start_time.strftime(format=' %l:%M %p') %> To: <%= timeslot.stop_time.strftime(format='%l:%M %p') %></li>
-        <% end %>
+   
 
       <% end %>
     <% end %>

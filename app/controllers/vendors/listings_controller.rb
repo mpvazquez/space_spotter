@@ -26,6 +26,7 @@ class Vendors::ListingsController < ApplicationController
   end
 
   def edit 
+    @timeslots = Timeslot.where(listing_id: @listing)
   end
 
   def update
