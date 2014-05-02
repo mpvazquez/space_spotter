@@ -20,26 +20,28 @@ pre, form, fieldset, table, th, td { margin: 0; padding: 0; }
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
 
 body {
-  background-image: url("/assets/green_cup.png");
+  background-image: url("/assets/crossword.png");
   background-repeat: repeat;
 }
 
 header {
   color: white;
-  background-color: rgba(215, 44, 44, 0.8);
+  background-color: rgba(215, 44, 44, 0.75);
 }
 
 h1 {
+  margin: 0 auto;
   font-family: Oswald;
   font-size: 3em;
   text-align: center;
   text-transform: uppercase;
+  letter-spacing: .05em;
 }
 
 h1 a {
-  margin: 0 auto;
   color: white;
   text-decoration: none;
+  text-shadow: 4px 4px 5px rgba(150, 150, 150, 0.5);
 }
 
 h2 {
@@ -84,7 +86,7 @@ a {
   display: inline-block;
   vertical-align: top;
   width: 30%;
-  margin-right: 25px;
+  margin-right: 2em;
 }
 
 .right-column h3 {
