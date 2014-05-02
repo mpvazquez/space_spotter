@@ -9,6 +9,8 @@
 <body>
 <header>
 
+  <h1><%= link_to "S-p-a-c-e-Spotter", root_path %></h1>
+
   <div class="login">
     <% if logged_in? && current_user.role == "admin"%>
       <p><%= link_to("#{current_user.first_name}'s Profile", admin_path(current_user)) %></p>
@@ -24,8 +26,6 @@
       <p><%= link_to("Register Here", new_customer_path) %></p>
     <% end %>
   </div>
-
-  <h1><%= link_to "S-p-a-c-e-Spotter", root_path %></h1>
 
 </header>
 
