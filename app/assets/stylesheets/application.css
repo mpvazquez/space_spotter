@@ -21,6 +21,7 @@ pre, form, fieldset, table, th, td { margin: 0; padding: 0; }
 
 body {
   background-image: url("/assets/crossword.png");
+  /*background-image: url('<%= asset_path("crossword.png");*/
   background-repeat: repeat;
 }
 
@@ -67,7 +68,7 @@ div.hero {
   text-align: center;
   color: white;
   background-size: cover;
-  background-image: url("/assets/map.jpg");
+  background-image: url("/assets/map-d523e68c4df33c550108085042f31ed9.jpg");
   width: 100%;
   height: 400px;
 }
