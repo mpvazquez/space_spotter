@@ -63,6 +63,31 @@ a {
   color: brown;
 }
 
+div.hero {
+  text-align: center;
+  color: white;
+  background-size: cover;
+  background-image: url("/assets/map.jpg");
+  width: 100%;
+  height: 400px;
+}
+
+div.main-search-input {
+  display: inline-block;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+div.main-search {
+  position: absolute;
+  top: 30%;
+  margin-left: 30%;
+  margin-right: 30%;
+  background-color: rgba(0, 0, 0, .4);
+  padding: 1em;
+  border-radius: 100%;
+}
+
 .login {
   margin-left: 2em;
   margin-top: -3em;

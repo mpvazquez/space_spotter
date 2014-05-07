@@ -1,3 +1,19 @@
+<div class="hero">
+
+  <div class="main-search">
+    <h2>Search For A Space In..</h2>
+    <%= form_tag("/listings", method: "get") do %>
+      <div class="main-search-input">
+      <%= text_field_tag(:city, nil, placeholder: "Location") %> <br>
+      </div>
+      <div class="main-search-input">
+      <%= text_field_tag(:type, nil, placeholder: "Type") %> 
+      </div><br>
+      <%= submit_tag("Search") %>
+    <% end %>
+  </div>
+</div>
+
 <h2>Welcome!</h2>
 
 <p><%= link_to "Browse All Listings", listings_path %></p>
