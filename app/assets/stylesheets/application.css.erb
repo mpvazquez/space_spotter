@@ -20,8 +20,7 @@ pre, form, fieldset, table, th, td { margin: 0; padding: 0; }
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
 
 body {
-  background-image: url("/assets/crossword.png");
-  /*background-image: url('<%= asset_path("crossword.png");*/
+  background-image: url("<%= asset_path('crossword.png') %>");
   background-repeat: repeat;
 }
 
@@ -68,7 +67,7 @@ div.hero {
   text-align: center;
   color: white;
   background-size: cover;
-  background-image: url("/assets/map-d523e68c4df33c550108085042f31ed9.jpg");
+  background-image: url("<%= asset_path('map.jpg') %>");
   width: 100%;
   height: 400px;
 }
