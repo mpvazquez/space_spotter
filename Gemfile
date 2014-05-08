@@ -60,4 +60,9 @@ end
 # Use stripe to manage online payments
 gem 'stripe'
 
-gem 'rails_12factor', group: :production
+group :production do
+  gem 'rails_12factor'
+  gem 'rails_serve_static_assets'
+end
+
+
