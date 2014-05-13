@@ -1,39 +1,42 @@
-<h2><%= @listing.title %> - <%= link_to "Book This Listing", listing_timeslots_path(@listing) %></h2>
+<div class="wrapper">
 
-<div class="left-column">
-  <img class="listing-photo" src="<%= @listing.listing_photo_url %>">
+  <h2><%= @listing.title %> - <%= link_to "Book This Listing", listing_timeslots_path(@listing) %></h2>
 
-  <p><%= @listing.description %></p>
+  <div class="left-column">
+    <img class="listing-photo" src="<%= @listing.listing_photo_url %>">
 
-</div>
+    <p><%= @listing.description %></p>
 
-<div class="right-column">
-  <h3>Rate: $<%= @listing.rate %></h3>
+  </div>
 
-  <h3>Location</h3>
-  <ul>
-    <li><%= @listing.address %></li>
-    <li><%= @listing.city %></li>
-    <li><%= @listing.state %></li>
-  </ul>
+  <div class="right-column">
+    <h3>Rate: $<%= @listing.rate %></h3>
 
-  <h3>Availability</h3>
-  <ul>
+    <h3>Location</h3>
+    <ul>
+      <li><%= @listing.address %></li>
+      <li><%= @listing.city %></li>
+      <li><%= @listing.state %></li>
+    </ul>
 
-    <% if @timeslots.exists? == false %>
+    <h3>Availability</h3>
+    <ul>
 
-    <li>No Availabilities At This Time</li>
+      <% if @timeslots.exists? == false %>
 
-    <% elsif %>
+      <li>No Availabilities At This Time</li>
 
-      <% @timeslots.each do |timeslot| %>
-        <% if timeslot.booked == true %>
-          <li class="listing-timeslot booked"><%= timeslot.date %></li>
-        <% else %>
-        <li class="listing-timeslot"><%= timeslot.date %> From: <%= timeslot.start_time.strftime(format=' %l:%M %p') %> To: <%= timeslot.stop_time.strftime(format='%l:%M %p') %></li>
+      <% elsif %>
+
+        <% @timeslots.each do |timeslot| %>
+          <% if timeslot.booked == true %>
+            <li class="listing-timeslot booked"><%= timeslot.date %></li>
+          <% else %>
+          <li class="listing-timeslot"><%= timeslot.date %> From: <%= timeslot.start_time.strftime(format=' %l:%M %p') %> To: <%= timeslot.stop_time.strftime(format='%l:%M %p') %></li>
+          <% end %>
+
         <% end %>
-
       <% end %>
-    <% end %>
-  </ul>
+    </ul>
+  </div>
 </div>

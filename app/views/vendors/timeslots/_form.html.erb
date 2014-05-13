@@ -1,23 +1,25 @@
-<h2><%= @timeslot.id.nil? ? "Create New Timeslot" : "Update Timeslot" %></h2>
+<div class="wrapper">
+  <h2><%= @timeslot.id.nil? ? "Create New Timeslot" : "Update Timeslot" %></h2>
 
-<div class="left-column">
-  <%= form_for [@vendor, @listing, @timeslot] do |f| %>
-    <%= f.label :date %>
-    <%= f.text_field :date %><br>
+  <div class="left-column">
+    <%= form_for [@vendor, @listing, @timeslot] do |f| %>
+      <%= f.label :date %>
+      <%= f.text_field :date %><br>
 
-    <%= f.label :start_time, "Start Time"%>
-    <%= f.text_field :start_time %><br>  
+      <%= f.label :start_time, "Start Time"%>
+      <%= f.text_field :start_time %><br>  
 
-    <%= f.label :stop_time, "Stop Time" %>
-    <%= f.text_field :stop_time %><br>
+      <%= f.label :stop_time, "Stop Time" %>
+      <%= f.text_field :stop_time %><br>
 
-    <%= f.submit @timeslot.id.nil? ? "Add Timeslot" : "Save Changes" %>
-  <% end %>
-
-  <% if @timeslot.id.nil? == false %>
-    <%= form_tag vendor_listing_timeslot_path, method: "DELETE" do %>
-      <%= submit_tag "Delete Timeslot" %>
+      <%= f.submit @timeslot.id.nil? ? "Add Timeslot" : "Save Changes" %>
     <% end %>
-  <% end %>
 
+    <% if @timeslot.id.nil? == false %>
+      <%= form_tag vendor_listing_timeslot_path, method: "DELETE" do %>
+        <%= submit_tag "Delete Timeslot" %>
+      <% end %>
+    <% end %>
+
+  </div>
 </div>

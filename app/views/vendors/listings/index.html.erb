@@ -1,7 +1,9 @@
-<h2><%= @vendor.first_name %>'s Listings</h2>
+<div class="wrapper">
+  <h2><%= @vendor.first_name %>'s Listings</h2>
 
-<ul>
-  <% @listings.each do | listing | %>
-    <li><%= link_to listing.title, vendor_listing_path(@vendor, listing) %></a> - <%= link_to "Update Listing", edit_vendor_listing_path(@vendor, listing) %></li>
-  <% end %>
-</ul>
+  <ul>
+    <% @listings.each do | listing | %>
+      <li><%= link_to listing.title, vendor_listing_path(@vendor, listing) %></a> - <%= link_to "Update Listing", edit_vendor_listing_path(@vendor, listing) %></li>
+    <% end %>
+  </ul>
+</div>

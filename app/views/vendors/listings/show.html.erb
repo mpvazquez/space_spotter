@@ -1,44 +1,46 @@
-<h2><%= @listing.title %></h2>
+<div class="wrapper">
+  <h2><%= @listing.title %></h2>
 
-<div class="left-column">
-  <img class="listing-photo" src="<%= @listing.listing_photo_url %>">
+  <div class="left-column">
+    <img class="listing-photo" src="<%= @listing.listing_photo_url %>">
 
-  <p><%= @listing.description %></p>
-  <%= form_tag edit_vendor_listing_path, method: "GET" do %>
-    <%= submit_tag "Update Listing" %>
-  <% end %>
-
-  <%= form_tag vendor_listing_path, method: "DELETE" do %>
-    <%= submit_tag "Delete Listing" %>
-  <% end %>
-
-</div>
-
-<div class="right-column">
-  <h3>Rate: $<%= @listing.rate %></h3>
-
-  <h3>Location</h3>
-  <ul>
-    <li><%= @listing.address %></li>
-    <li><%= @listing.city %></li>
-    <li><%= @listing.state %></li>
-  </ul>
-
-  <h3>Availability</h3>
-  <ul>
-
-    <% if @timeslots.exists? == false %>
-
-    <li>No Availabilities At This Time</li>
-
-    <% elsif %>
-
-      <% @timeslots.each do |timeslot| %>
-       
-        <li class="listing-timeslot"><%= timeslot.date %> From: <%= timeslot.start_time.strftime(format=' %l:%M %p') %> To: <%= timeslot.stop_time.strftime(format='%l:%M %p') %></li>
-   
-
-      <% end %>
+    <p><%= @listing.description %></p>
+    <%= form_tag edit_vendor_listing_path, method: "GET" do %>
+      <%= submit_tag "Update Listing" %>
     <% end %>
-  </ul>
+
+    <%= form_tag vendor_listing_path, method: "DELETE" do %>
+      <%= submit_tag "Delete Listing" %>
+    <% end %>
+
+  </div>
+
+  <div class="right-column">
+    <h3>Rate: $<%= @listing.rate %></h3>
+
+    <h3>Location</h3>
+    <ul>
+      <li><%= @listing.address %></li>
+      <li><%= @listing.city %></li>
+      <li><%= @listing.state %></li>
+    </ul>
+
+    <h3>Availability</h3>
+    <ul>
+
+      <% if @timeslots.exists? == false %>
+
+      <li>No Availabilities At This Time</li>
+
+      <% elsif %>
+
+        <% @timeslots.each do |timeslot| %>
+         
+          <li class="listing-timeslot"><%= timeslot.date %> From: <%= timeslot.start_time.strftime(format=' %l:%M %p') %> To: <%= timeslot.stop_time.strftime(format='%l:%M %p') %></li>
+     
+
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
 </div>

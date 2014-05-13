@@ -1,7 +1,11 @@
-<h1>Listings</h1>
+<div class="wrapper">
 
-<ul>
-  <% @listings.each do | listing | %>
-    <li><%= link_to listing.title, listing_path(listing) %></a></li>
-  <% end %>
-</ul>
+  <h1>Listings</h1>
+
+  <ul>
+    <% @listings.each do | listing | %>
+      <li><%= link_to listing.title, listing_path(listing) %></a></li>
+    <% end %>
+  </ul>
+
+</div>

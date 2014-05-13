@@ -1,7 +1,9 @@
-<h2>Welcome, <%= @user.first_name %></h2>
+<div class="wrapper">
+  <h2>Welcome, <%= @user.first_name %></h2>
 
-<%= link_to "Edit Account Information", edit_user_path %>
+  <%= link_to "Edit Account Information", edit_user_path %>
 
-<%= form_tag user_path, method: "DELETE" do %>
-  <%= submit_tag "Delete Account" %>
-<% end %>
+  <%= form_tag user_path, method: "DELETE" do %>
+    <%= submit_tag "Delete Account" %>
+  <% end %>
+</div>
