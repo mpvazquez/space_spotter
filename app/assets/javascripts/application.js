@@ -18,7 +18,7 @@
 $(document).ready(function() {
 
   function listingUpdate() {
-    var li = $('.listing-timeslot')
+    var li = $('.listing-timeslot');
 
     if (li.booked === true) {
       li.addID('.booked');
