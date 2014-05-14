@@ -18,7 +18,8 @@ class Vendors::ListingsController < ApplicationController
   def create
     @vendor = Vendor.find(session[:user_id])
     @listing = Listing.new(listing_params)
-    @listing.update(vendor_id: @vendor.id)
+    @listing.vendor_id = @vendor.id
+    @listing.save
     if @listing.save
       redirect_to vendor_listing_path(@vendor, @listing)
     else
