@@ -2,12 +2,12 @@
 
   <h1>Listings</h1>
 
-  <ul>
-    <% @listings.each do | listing | %>
-      <li><%= link_to listing.title, listing_path(listing) %></a></li>
-    <% end %>
-  </ul>
+  <% @listings.each do | listing | %>
+    <div class="listing-item">
+      <%= link_to listing.title, listing_path(listing) %>
+    </div>
+  <% end %>
+
 
 </div>
 
-<script></script>
