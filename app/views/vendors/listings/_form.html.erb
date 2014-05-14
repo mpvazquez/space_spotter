@@ -1,7 +1,7 @@
 <h2><%= @listing.id.nil? ? "Create New Listing" : "Update Listing" %></h2>
 
 <div class="left-column">
-  <%= form_for [@vendor, @listing] do |f| %>
+  <%= form_for @listing, url: [@vendor, @listing] do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title %><br>
 
