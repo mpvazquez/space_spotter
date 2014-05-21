@@ -4,7 +4,13 @@
 
   <% @listings.each do | listing | %>
     <div class="listing-item">
-      <%= link_to listing.title, listing_path(listing) %>
+      <div class="listing-item-title">
+        <%= link_to listing.title, listing_path(listing) %>
+      </div>
+      <img src="<%= listing.listing_photo_url %>" alt="">
+      <div class="right-listing-item">
+        
+      </div>
     </div>
   <% end %>
 
